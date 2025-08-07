@@ -205,11 +205,11 @@ module.exports.renderHeatmap = async (req, res) => {
     const complaints = await complainModel.find({});
     if(req.user){
     let Incidents = await Incident.find({user: req.user._id});
-    res.render("users/heatMap", { complaints: JSON.stringify(complaints), Incidents });
+    res.render("users/heatmap", { complaints: JSON.stringify(complaints), Incidents });
     }
     else{
       let Incidents = [{}];
-      res.render("users/heatMap", { complaints: JSON.stringify(complaints), Incidents });
+      res.render("users/heatmap", { complaints: JSON.stringify(complaints), Incidents });
     }
   } catch (err) {
     console.error(err);
